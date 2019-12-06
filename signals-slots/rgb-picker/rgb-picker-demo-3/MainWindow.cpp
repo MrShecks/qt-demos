@@ -65,6 +65,8 @@ MainWindow::MainWindow(QWidget* parent)
     // If the signals and slot do not have any overloads we can ommit this (e.g &QSpingBox::valueChanged) and
     // Qt will figure out the method signature.
     //
+    // This probably the preferred method for simple connections.
+    //
 
     connect(ui->spinGreenValue, QOverload<int>::of(&QSpinBox::valueChanged), ui->sliderGreenValue, &QSlider::setValue);
 
@@ -72,7 +74,7 @@ MainWindow::MainWindow(QWidget* parent)
     // Method 3 - The C++ guru way ... with Lambdas
     // Perhaps not the best example here since we just need to set a single value, but image you wanted
     // to do more than just set the value of the Blue QSpinBox e.g perhaps change the blue value of another
-    // widgets background colour to reflect the change? Well you could do this inside the lambda too
+    // widgets background colour to reflect the change? Well you could do this inside the lambda too.
     //
 
     connect(ui->spinBlueValue, QOverload<int>::of(&QSpinBox::valueChanged), ui->sliderBlueValue, [=]() {
