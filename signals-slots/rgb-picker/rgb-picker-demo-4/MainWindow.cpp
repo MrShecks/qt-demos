@@ -138,7 +138,7 @@ void MainWindow::_onRGBValues_Changed() {
 
     ui->textHtmlColor->setText(htmlColor);
 
-    // As a bonus, since we already have the RGB color, let display it in the QFrame widget
+    // As a bonus, since we already have the RGB color, lets display it in the QFrame widget
 
     QPalette palette = ui->frameColorPreview->palette();
 
