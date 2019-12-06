@@ -62,7 +62,7 @@ MainWindow::MainWindow(QWidget* parent)
     // overloads. In this case we need to tell Qt which one we would like to connect. This is done using
     // The QOverload<>::of() helper method.
     //
-    // If the signals and slot do not have any overloads we can ommit this (e.g &QSpingBox::valueChanged) and
+    // If the signals and slot do not have any overloads we can ommit this (e.g &QSpinBox::valueChanged) and
     // Qt will figure out the method signature.
     //
     // This probably the preferred method for simple connections.
