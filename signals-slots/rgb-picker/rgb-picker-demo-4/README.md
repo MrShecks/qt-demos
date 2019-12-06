@@ -56,3 +56,50 @@ void MainWindow::_onRGBValues_Changed() {
 
 }
 ```
+
+Once the custom slot has been defined we can connect it to the ```QSlider::valueChanged()``` signal of all 3 QSlider widgets using one of the manual connection methods shown in the rgb-picker-demo-3
+
+In this example we will use method 2 by placing the following code in the constructor of MainWindow in [MainWindow.cpp](MainWindow.cpp)
+
+```C++
+connect(ui->sliderRedValue, &QSlider::valueChanged, this, &MainWindow::_onRGBValues_Changed);
+connect(ui->sliderGreenValue, &QSlider::valueChanged, this, &MainWindow::_onRGBValues_Changed);
+connect(ui->sliderBlueValue, &QSlider::valueChanged, this, &MainWindow::_onRGBValues_Changed);
+```
+
+Once these connections are made our ```MainWindow::_onRGBValues_Changed()``` slot will be called when the user changes any of the sliders
+
+All that remains now is to do something useful in the ```_onRGBValues_Changed()``` slot
+
+```C++
+void MainWindow::_onRGBValues_Changed() {
+
+    // The slot will be called when any of the QSlider::valueChanged() signals are fired but
+    // we need all 3 RGB component values to build our HTML colour code, so we just query the
+    // properties of each slider.
+
+    int red = ui->sliderRedValue->value();
+    int green = ui->sliderGreenValue->value();
+    int blue = ui->sliderBlueValue->value();
+
+    // A little bit of QString formatting magic ... (see https://doc.qt.io/qt-5/qstring.html#arg)
+
+    QString htmlColor = QString("#%1%2%3")
+            .arg(red, 2, 16, QChar('0'))
+            .arg(green, 2, 16, QChar('0'))
+            .arg(blue, 2, 16, QChar('0'));
+
+    // And we can update the text of the QLineEdit to display our new HTML color code.
+
+    ui->textHtmlColor->setText(htmlColor);
+
+    // As a bonus, since we already have the RGB color, lets display it in the QFrame widget
+
+    QPalette palette = ui->frameColorPreview->palette();
+
+    palette.setColor (QPalette::Background, QColor::fromRgb(red, green, blue));
+
+    ui->frameColorPreview->setAutoFillBackground(true);
+    ui->frameColorPreview->setPalette(palette);
+}
+```
