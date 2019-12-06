@@ -1,4 +1,4 @@
-# rgb-picker-demo-3
+# rgb-picker-demo-4
 
 This is the fourth step in the rgb-picker-demo. It is based rgb-picker-demo-3
 with some additional code demonstrating how we can connection signals from one or more ```QObjects``` (QWidgets) to
