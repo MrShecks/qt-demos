@@ -11,6 +11,14 @@ The step-by-step examples for the RGB Picker Demo can be found in the following 
   This project contains changes to start building the demo UI. There is no additional code from
   previous step, only the ```MainWindow.ui``` file has been modified via Qt Designer.
 
-- rgb-picker-demo-2
+- rgb-picker-demo-3
   Continuing on with the steps to create our RGB Picker this project demonstrates the different methods
   that can be used to manually make connections between ```QObjects``` in code using the ```QObject::connect()``` method.  
+
+- rgb-picker-demo-4
+  In the final part of the demo project I demonstrate how to connect multiple signals to custom defined slots on
+  our ```MainWindow```
+
+#### Here's what we will be building
+
+![rgb-picker-demo](docs/screenshots/rgb-picker-demo-4-001.png)
