@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/fast-forward.svg</file>
+        <file>assets/rewind.svg</file>
+        <file>assets/stop.svg</file>
+        <file>assets/pause.svg</file>
+        <file>assets/play.svg</file>
+    </qresource>
+</RCC>

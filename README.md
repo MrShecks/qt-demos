@@ -3,6 +3,6 @@ A small collection of demo applications aimed and Qt beginners or anyone interes
 
 - [signals-slots](signals-slots) Basic demons on using signals and slots
 
-    - [rgb-picker-demo](rgb-picker-demo) An RGB colour picker demoing connecting signals and slots between UI widgets (```QSliders```, ```QSpinBoxes```) and customs slots.
+    - [rgb-picker-demo](signals-slots/rgb-picker) An RGB colour picker demoing connecting signals and slots between UI widgets (```QSliders```, ```QSpinBoxes```) and customs slots.
 
     ![rgb-picker-demo](signals-slots/rgb-picker/docs/screenshots/rgb-picker-demo-4-001.png)
